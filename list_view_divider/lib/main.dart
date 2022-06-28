@@ -34,15 +34,17 @@ class _MyHomePageState extends State<MyHomePage> {
         appBar: AppBar(
           title: Text('Horizontal list'),
         ),
-        body: ListView.builder(
-            itemCount: items.length,
-            itemBuilder: (context, index){
-              return Card(
-                child: ListTile(
-                  title: Text('${items[index]}'),
-                ),
-              );
-            })
+        body: SafeArea(
+          child: ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (context, index){
+                return Card(
+                  child: ListTile(
+                    title: Text('${items[index]}'),
+                  ),
+                );
+              }),
+        )
     );
   }
 }
